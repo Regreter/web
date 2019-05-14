@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>冒泡排序算法动画</title>
+    <script type="text/javascript" src="function.js"></script>
+    <script type="text/javascript" src="jquery-1.11.0.js"></script>
+    <style>
+        #boxes{
+            border: 5px solid yellowgreen;
+            left: 100px;
+            width: 993px;
+            height: 300px;
+            margin-top: 50px;
+            position: relative;
+        }
+        .box{
+            background: rgb(51, 95, 190);
+            width: 20px;
+            line-height: 40px;  /*行高*/
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 15px;
+            color:white;
+            margin: 0 1px;
+            position:absolute;
+        }
+       h1{
+       font-family: "Time New Roman",'Times New Roman', Times, serif;
+       font-size: 30px;
+       color:goldenrod;
+       }
+       #top{
+       background: rgb(5, 88, 5);
+       margin-left: 0px;
+       margin-top: 0px;
+       width: 1520px;
+       height: 50px;
+       margin-bottom: 10px;
+       }
+       #header{background:#063;color:#fc3;padding:0 10px 0 0px}
+       #header h1{margin:0;padding:30px 0}
+       div#box1{
+           border: 0px;
+           width: 300px;
+           height: 200px;
+           margin-top: 0px;
+           margin-left: 100px;
+       }
+          
+
+div#box2{
+    background-color: yellow;
+    border: 0px;
+           width: 500px;
+           height: 200px;
+           margin-top: 300px;
+           margin-left: 800px;}
+ 
+    </style>
+</head>
+<body>
+    
+    <div id="header">
+        
+    <h1 id="top" style="display: inline-block;">冒泡排序算法动画</h1>
+    <div style="float:right; margin: 15px;"></div>
+    <div style=" display: block;">
+    <p id="boxes"></p>
+    <script type="text/javascript" src="sort1.js"></script>
+    <div id="place" style="width: 1000px; height: 200px;left: 100;">
+        
+        <div style="margin-left:100px;">
+            <h3>输入柱子：&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;游戏控制</h3> 
+            <input type="text" value="" id="text1" />
+            <input type="button" value="添加柱子" onclick="inputsort()"/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            <input type="button" value="开始" onclick="sort()"/>&emsp;&emsp;&emsp;
+            <input type="button" value="暂停" id="stop" onclick="stop()">
+            
+            <h3>输入速度：</h3>
+            <input type="text" value="" id="text2" />
+            <input type="button" value="控制速度" onclick="GetSpeed()" />&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            <input type="button" value="重放" id="reset" />&emsp;&emsp;&emsp;
+            <input type="button" value="退出"  id="exit" onclick="exit()" />
+        </div>
+    </div>
+
+</body>
+</html>
