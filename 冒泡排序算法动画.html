@@ -39,6 +39,7 @@
        width: 1520px;
        height: 50px;
        margin-bottom: 10px;
+       text-align: center;
        }
        #header{background:#063;color:#fc3;padding:0 10px 0 0px}
        #header h1{margin:0;padding:30px 0}
@@ -75,7 +76,7 @@ div#box2{
         <div style="margin-left:100px;">
             <h3>输入柱子：&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;游戏控制</h3> 
             <input type="text" value="" id="text1" />
-            <input type="button" value="添加柱子" onclick="inputsort()"/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            <input type="button" value="添加柱子" onclick="addPillar()"/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
             <input type="button" value="开始" onclick="sort()"/>&emsp;&emsp;&emsp;
             <input type="button" value="暂停" id="stop" onclick="stop()">
             
@@ -84,6 +85,10 @@ div#box2{
             <input type="button" value="控制速度" onclick="GetSpeed()" />&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
             <input type="button" value="重放" id="reset" />&emsp;&emsp;&emsp;
             <input type="button" value="退出"  id="exit" onclick="exit()" />
+
+            <h3>随机数数量：</h3>
+            <input type="text" value="" id = "text3"/>
+            <input type="button" value="生成"onclick="createRandomArray()" />
         </div>
     </div>
 

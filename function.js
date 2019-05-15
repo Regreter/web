@@ -1,3 +1,5 @@
+const pillarArr = [];
+
 function GetSpeed()
 {
 	var spd=document.getElementById("text2").value
@@ -19,7 +21,7 @@ function random(){
         return numbers;  
         }  
 function sort(){  
-    var numbers = random();  
+    var numbers = pillarArr;  
     var speed=GetSpeed();
     var parentElement = document.getElementById("boxes");  
     var i = 0, j = 0;  
@@ -96,6 +98,7 @@ function GetArray()
         }  
         return arr;  
 }
+
 function inputsort(){  
     var numbers = GetArray();  
     var speed=GetSpeed();
@@ -132,4 +135,70 @@ function inputsort(){
                         return;  
                     }  
                 }, speed);    
-            }  
+}
+
+
+/* 
+    功能：创建柱子
+    参数：柱子的数值   
+*/
+function createPillar(number)
+{
+    let index = document.getElementById("boxes").children.length;
+    let pElement = document.createElement("p");  
+    let parentElement = document.getElementById("boxes");  
+    let textValue = document.createTextNode(number)
+    pElement.appendChild(textValue);
+    pElement.style.left = index * 20 + index * 2 + "px";  
+    pElement.style.top = 300 - 3 * number + "px";  
+    pElement.style.height = 3 * number + "px";  
+    pElement.setAttribute("class","box");  
+    parentElement.appendChild(pElement); 
+    pillarArr.push(Number(number));
+}
+
+/*
+    功能：添加柱子
+    参数：获取id为text1的输入框
+*/
+
+function addPillar()
+{
+    let textBox = $('#text1').val();
+    let arr = textBox.split(/，|,/);
+    let i = 0;
+    while( i < arr.length)
+    {
+        createPillar(arr[i]);
+        i++;
+    }
+    $('#text1').val("");
+}
+
+/* 
+    功能：创建随机数组
+*/
+
+function createRandomArray()
+{
+    pillarArr.length = 0;
+    let box = document.getElementById("boxes");
+    box.innerHTML = "";
+    let num = $('#text3').val();
+    while(num--)
+    {
+        number = Math.floor(Math.random() * 90 + 10);
+        createPillar(number);
+    }
+}
+
+/*
+    功能：清空动画框
+*/
+
+function removePillar()
+{
+    pillarArr.length = 0;
+    let box = document.getElementById("boxes");
+    box.innerHTML = "";
+}
