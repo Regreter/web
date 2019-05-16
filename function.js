@@ -1,4 +1,5 @@
 const pillarArr = [];
+let pillarArrCopy;
 
 function GetSpeed()
 {
@@ -21,7 +22,7 @@ function random(){
         return numbers;  
         }  
 function sort(){  
-    var numbers = pillarArr;  
+    var numbers = pillarArrCopy;  
     var speed=GetSpeed();
     var parentElement = document.getElementById("boxes");  
     var i = 0, j = 0;  
@@ -155,6 +156,7 @@ function createPillar(number)
     pElement.setAttribute("class","box");  
     parentElement.appendChild(pElement); 
     pillarArr.push(Number(number));
+    pillarArrCopy = pillarArr.slice(0);
 }
 
 /*
@@ -201,4 +203,15 @@ function removePillar()
     pillarArr.length = 0;
     let box = document.getElementById("boxes");
     box.innerHTML = "";
+}
+
+/*
+    功能：重放动画        
+*/
+
+function reMove()
+{
+    pillarArrCopy.length = 0;
+    pillarArrCopy = pillarArr.slice(0);
+    sort();
 }
